@@ -1,7 +1,7 @@
 # 持仓体检 PortfolioCheck — AI Native 组合风险诊断
 
 > 个人投资者贴入持仓，1 分钟拿到一份「组合风险体检报告」——只提示风险，不荐股、不预测。
-> 在线体验：https://portfolio-check-xxxx.onrender.com/（部署后替换）
+> 在线体验：https://portfolio-check-ajhq.onrender.com/
 
 ## 一、目标用户与非目标
 
