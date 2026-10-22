@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>持仓体检 PortfolioCheck — AI Native 组合风险诊断</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">持</span>
+      <div>
+        <h1>持仓体检 <small>PortfolioCheck</small></h1>
+        <p class="tagline">贴入持仓，1 分钟看清组合的隐藏风险 —— 只提示风险，不荐股、不预测。</p>
+      </div>
+    </div>
+    <div class="source-status" id="source-status">数据源检测中…</div>
+  </header>
+
+  <main class="layout">
+    <!-- 左侧：持仓输入 -->
+    <section class="panel input-panel">
+      <div class="panel-head">
+        <h2>我的持仓</h2>
+        <button class="ghost" id="btn-sample" type="button">载入示例组合</button>
+      </div>
+      <p class="hint">输入 A 股 thscode（如 <code>600519.SH</code>）与权重，权重之和需为 100%。</p>
+      <div id="holdings"></div>
+      <button class="ghost" id="btn-add" type="button">+ 添加一行</button>
+      <div class="weight-bar" id="weight-bar"></div>
+      <button class="primary" id="btn-check" type="button">开始体检</button>
+      <p class="disclaimer">本产品仅输出风险提示，不构成任何投资建议，不预测涨跌、不承诺收益。</p>
+    </section>
+
+    <!-- 右侧：报告 -->
+    <section class="panel report-panel">
+      <div class="panel-head"><h2>体检报告</h2></div>
+      <div id="report-empty" class="empty">
+        暂无报告。点击「载入示例组合」→「开始体检」体验完整流程。<br/>
+        未配置数据源时，集中度/题材暴露仍可计算，估值/相关性/波动将显式标注缺失。
+      </div>
+      <div id="report" hidden></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    持仓体检 PortfolioCheck · 数据源：扶摇（行情/估值/财务/历史日线）+ iFinD MCP · 结论全部可回溯 ·
+    AI 产出均为「待复核」
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

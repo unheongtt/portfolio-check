@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: portfolio-check
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: FUYAO_API_KEY
+        sync: false
+      - key: FUYAO_BASE_URL
+        value: https://fuyao.aicubes.cn
+      - key: IFIND_MCP_URL
+        sync: false
+      - key: IFIND_MCP_TOKEN
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_BASE_URL
+        sync: false
+      - key: LLM_MODEL
+        sync: false
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 8000

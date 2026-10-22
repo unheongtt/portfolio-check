@@ -1,0 +1,121 @@
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --ink: #1a2233;
+  --muted: #6b7484;
+  --line: #e5e9f0;
+  --brand: #2f6bff;
+  --brand-weak: #eef3ff;
+  --high: #d92d20;
+  --high-bg: #fef1f0;
+  --med: #d97706;
+  --med-bg: #fff7e8;
+  --low: #2e8b57;
+  --low-bg: #ecf8f0;
+  --info: #475467;
+  --info-bg: #f2f4f7;
+  --warn: #b42318;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  padding-bottom: 48px;
+}
+
+.topbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 18px 28px; background: var(--panel); border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 5;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.logo {
+  width: 42px; height: 42px; border-radius: 11px; background: var(--brand); color: #fff;
+  display: grid; place-items: center; font-size: 20px; font-weight: 700; flex: none;
+}
+.brand h1 { margin: 0; font-size: 19px; }
+.brand small { color: var(--muted); font-weight: 500; font-size: 13px; margin-left: 4px; }
+.tagline { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.source-status { font-size: 12px; color: var(--muted); background: var(--info-bg); padding: 6px 12px; border-radius: 8px; max-width: 320px; }
+
+.layout {
+  display: grid; grid-template-columns: 380px 1fr; gap: 20px;
+  padding: 22px 28px; max-width: 1280px; margin: 0 auto; align-items: start;
+}
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.panel-head h2 { margin: 0; font-size: 16px; }
+.hint { color: var(--muted); font-size: 13px; margin: 4px 0 14px; }
+.hint code { background: var(--info-bg); padding: 1px 5px; border-radius: 5px; font-size: 12px; }
+
+/* 持仓行 */
+.holding-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.holding-row input[type=text] { flex: 1.6; }
+.holding-row input[type=number] { flex: 1; }
+.holding-row input {
+  padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px;
+  background: #fff; color: var(--ink); min-width: 0;
+}
+.holding-row input:focus { outline: 2px solid var(--brand-weak); border-color: var(--brand); }
+.holding-row .rm { border: none; background: transparent; color: var(--muted); cursor: pointer; font-size: 18px; padding: 4px 8px; }
+.holding-row .rm:hover { color: var(--high); }
+
+.weight-bar { height: 8px; border-radius: 4px; background: var(--info-bg); margin: 12px 0; overflow: hidden; }
+.weight-bar > span { display: block; height: 100%; background: var(--brand); transition: width .3s; }
+.weight-total { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+.weight-total.bad { color: var(--high); font-weight: 600; }
+
+button { cursor: pointer; font: inherit; border-radius: 9px; padding: 9px 14px; border: 1px solid var(--line); background: #fff; color: var(--ink); }
+button.primary { background: var(--brand); color: #fff; border-color: var(--brand); width: 100%; padding: 12px; font-weight: 600; }
+button.primary:disabled { opacity: .5; cursor: not-allowed; }
+button.ghost { background: var(--brand-weak); color: var(--brand); border-color: transparent; font-size: 13px; }
+button.ghost:hover { background: #e2ebff; }
+
+.disclaimer { color: var(--muted); font-size: 12px; margin-top: 14px; }
+.empty { color: var(--muted); font-size: 14px; padding: 40px 20px; text-align: center; line-height: 1.9; }
+
+/* 报告 */
+.overall { background: var(--brand-weak); border: 1px solid #dbe6ff; border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; }
+.overall h3 { margin: 0 0 8px; font-size: 14px; color: var(--brand); }
+.overall p { margin: 0; white-space: pre-line; font-size: 14px; }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.badge.high { background: var(--high-bg); color: var(--high); }
+.badge.medium { background: var(--med-bg); color: var(--med); }
+.badge.low { background: var(--low-bg); color: var(--low); }
+.badge.status-fact { background: #eef8ff; color: #1264a3; }
+.badge.status-inference { background: #f6f1ff; color: #6b46c1; }
+.badge.status-uncertain { background: var(--med-bg); color: var(--med); }
+.badge.ok { background: var(--low-bg); color: var(--low); }
+.badge.missing, .badge.error { background: var(--high-bg); color: var(--high); }
+.badge.stale { background: var(--med-bg); color: var(--med); }
+.badge.pending { background: var(--med-bg); color: var(--med); }
+
+.finding { border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+.finding.high { border-left: 4px solid var(--high); }
+.finding.medium { border-left: 4px solid var(--med); }
+.finding.low { border-left: 4px solid var(--low); }
+.finding-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.finding-head h3 { margin: 0; font-size: 15px; flex: 1; min-width: 200px; }
+.finding .category { color: var(--muted); font-size: 12px; }
+
+.evidence { list-style: none; margin: 12px 0 8px; padding: 0; }
+.evidence li { display: flex; gap: 8px; align-items: baseline; font-size: 13px; padding: 4px 0; border-bottom: 1px dashed var(--line); }
+.evidence .ev-label { color: var(--muted); flex: none; }
+.evidence .ev-value { font-weight: 600; font-variant-numeric: tabular-nums; }
+.evidence .ev-meta { color: var(--muted); font-size: 12px; margin-left: auto; text-align: right; }
+
+.rule { font-size: 12px; color: var(--muted); margin: 6px 0; }
+.narrative { background: #fafbfc; border-radius: 8px; padding: 10px 12px; font-size: 13px; white-space: pre-line; margin-top: 10px; }
+.narrative .n-head { display: flex; gap: 8px; align-items: center; margin-bottom: 4px; }
+.narrative .n-head b { font-size: 12px; color: var(--muted); }
+
+.meta-line { font-size: 12px; color: var(--muted); margin-top: 12px; }
+.footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 20px; }

@@ -1,0 +1,8 @@
+[
+  {"thscode": "600519.SH", "name": "贵州茅台", "industry": "白酒", "industry_source": "同花顺行业分类（静态种子）", "concepts": ["白酒", "大消费", "核心资产"]},
+  {"thscode": "300750.SZ", "name": "宁德时代", "industry": "电池", "industry_source": "同花顺行业分类（静态种子）", "concepts": ["动力电池", "新能源", "储能"]},
+  {"thscode": "002594.SZ", "name": "比亚迪", "industry": "汽车整车", "industry_source": "同花顺行业分类（静态种子）", "concepts": ["新能源车", "锂电", "新能源"]},
+  {"thscode": "601012.SH", "name": "隆基绿能", "industry": "光伏设备", "industry_source": "同花顺行业分类（静态种子）", "concepts": ["光伏", "新能源"]},
+  {"thscode": "002475.SZ", "name": "立讯精密", "industry": "消费电子", "industry_source": "同花顺行业分类（静态种子）", "concepts": ["消费电子", "苹果产业链", "果链"]},
+  {"thscode": "688981.SH", "name": "中芯国际", "industry": "半导体", "industry_source": "同花顺行业分类（静态种子）", "concepts": ["半导体", "国产替代", "芯片"]}
+]

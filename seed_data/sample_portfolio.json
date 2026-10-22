@@ -1,0 +1,12 @@
+{
+  "id": "sample",
+  "name": "示例组合（刻意集中，用于演示风险识别，非投资建议）",
+  "holdings": [
+    {"thscode": "600519.SH", "name": "贵州茅台", "market": "A股", "weight_pct": 33, "ord": 0},
+    {"thscode": "300750.SZ", "name": "宁德时代", "market": "A股", "weight_pct": 22, "ord": 1},
+    {"thscode": "002594.SZ", "name": "比亚迪", "market": "A股", "weight_pct": 16, "ord": 2},
+    {"thscode": "601012.SH", "name": "隆基绿能", "market": "A股", "weight_pct": 10, "ord": 3},
+    {"thscode": "002475.SZ", "name": "立讯精密", "market": "A股", "weight_pct": 12, "ord": 4},
+    {"thscode": "688981.SH", "name": "中芯国际", "market": "A股", "weight_pct": 7, "ord": 5}
+  ]
+}
